@@ -1,12 +1,21 @@
-import {Link} from "react-router-dom";
- function Login() {
+import { Link } from "react-router-dom";
+import { useState } from "react";
+function Login() {
   return (
     <div>
       <h2>Login Page</h2>
-      <p><input type="text" placeholder="Email" /></p>
-      <p><input type="password" placeholder="Password"/></p>
-      <p><button>Login</button></p>
-      <p><Link to="/register"> New user Register here</Link></p>
+      <p>
+        <input type="text" placeholder="Email" />
+      </p>
+      <p>
+        <input type="password" placeholder="Password" />
+      </p>
+      <p>
+        <button>Login</button>
+      </p>
+      <p>
+        <Link to="/register"> New user Register here</Link>
+      </p>
     </div>
   );
 }
