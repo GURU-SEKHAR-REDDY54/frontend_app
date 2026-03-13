@@ -48,7 +48,9 @@ function Cart() {
         orderDate: Date.now(),
       };
       console.log(url, order);
-      const response = await axios.post(url, order);
+      const response = await axios.post(url, order, {
+        headers: { Authorization: `Bearer ${user.token}` },
+      });
       setCart([]);
       Navigate("/orders");
     }
