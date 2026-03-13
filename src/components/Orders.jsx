@@ -7,11 +7,15 @@ function Orders() {
   const [orders, setOrders] = useState([]);
 
   const fetchOrders = async () => {
-    const url = `${API_URL}/orders/${user.email}`;
-    const response = await axios.get(url, {
-      headers: { Authorization: `Bearer ${user.token}` },
-    });
-    setOrders(response.data);
+    try {
+      const url = `${API_URL}/orders/${user.email}`;
+      const response = await axios.get(url, {
+        headers: { Authorization: `Bearer ${user.token}` },
+      });
+      setOrders(response.data);
+    } catch (err) {
+      console.log("Something went wrong");
+    }
   };
 
   useEffect(() => {
